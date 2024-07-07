@@ -18,7 +18,7 @@ const Difficulty = ()  => {
                 setError("Something has happened, try again")
             })
             .finally( () => {
-                setLoading(false)
+                // setLoading(false)
                 }
             )
     }, []);

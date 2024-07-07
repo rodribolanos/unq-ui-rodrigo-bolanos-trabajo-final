@@ -22,7 +22,6 @@
 .pelotas {
     width: 30px;
     height: 30px;
-    background-color: #00b8de;
     animation: salto .5s alternate
     infinite;
     border-radius: 50%
