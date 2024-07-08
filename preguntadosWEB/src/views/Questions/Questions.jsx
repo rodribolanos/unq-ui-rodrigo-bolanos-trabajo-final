@@ -47,7 +47,7 @@ const Questions = () => {
     return (
         index <= questions.length - 1 ?
             <>
-                <div className="resultContainer">
+            <div className="resultContainer">
                     <h2>Result: {result}</h2>
                 </div>
                 <div className="questionContainer">
@@ -74,8 +74,10 @@ const Questions = () => {
             <div className="finish">
                 <h1>Thanks for playing!</h1>
                 <h2>Result: {result}</h2>
-                <Link to={'/'}>Play again</Link>
-              </div>
+                { result < 5 ? <h3>Try again!</h3> : <h3>Good job!</h3> }
+                {result === 10 ? <h3>Perfect score! You are J!</h3> : null}
+                <Link to={'/'} style={{ color: 'white' }}>Play again</Link>
+            </div>
     )
 }
 
