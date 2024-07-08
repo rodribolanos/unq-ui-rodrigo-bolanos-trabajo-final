@@ -2,6 +2,7 @@
 .container{
     display: grid;
     place-content: center;
+    height: 150px;
 }
 .cargando{
     width: 120px;

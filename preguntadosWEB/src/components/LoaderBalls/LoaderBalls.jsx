@@ -2,7 +2,7 @@ import './LoaderBalls.css';
 import {useEffect} from "react";
 
 const LoaderBalls = () => {
-    const colors = ['red', 'lightblue', 'pink', 'green', 'yellow'];
+    const colors = ['#4278FF', '#9F02FF', 'red', 'green', 'orange', 'yellow', 'orange', "#AEFF01", "#02FFE8", "#FF0294", "#FFE802"]
     function getRandomColor() {
         return colors[Math.floor(Math.random() * colors.length)];
     }
@@ -25,7 +25,7 @@ const LoaderBalls = () => {
                 <div className="pelotas"></div>
 
             </div>
-            <div className="texto-cargando">Cargando...</div>
+            <div className="texto-cargando">Wait a moment...</div>
         </div>
     )
 }
