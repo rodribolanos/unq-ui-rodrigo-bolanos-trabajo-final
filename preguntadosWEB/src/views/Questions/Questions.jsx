@@ -1,3 +1,4 @@
+import '../../utils/globals.css'
 import {useEffect, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
@@ -45,7 +46,7 @@ const Questions = () => {
                 <div className="questionContainer">
                     <h1>{questions[index].question}</h1>
                 </div>
-                <div className="optionsContainer">
+                <div className="button-container">
                     {Object.keys(questions[index])
                         .filter(key => key.startsWith('option'))
                         .map(optionKey => (

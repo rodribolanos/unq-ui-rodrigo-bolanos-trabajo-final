@@ -1,3 +1,4 @@
+import '../../utils/globals.css'
 import {useEffect, useState} from "react";
 import {getDifficulty} from "../../service/api.js";
 import {useNavigate} from "react-router-dom";
@@ -18,7 +19,7 @@ const Difficulty = ()  => {
                 setError("Something has happened, try again")
             })
             .finally( () => {
-                 setLoading(false)
+                 setTimeout( () => setLoading(false), 2500)
                 }
             )
     }, []);
