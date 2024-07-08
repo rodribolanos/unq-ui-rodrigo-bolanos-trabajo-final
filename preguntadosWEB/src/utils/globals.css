@@ -31,3 +31,15 @@ span {
 h1 {
     font-size: 40px;
 }
+
+.questionContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 1400px;
+    background-color: #fefefe;
+    color: black;
+    border-radius: 10px;
+    border: 1.5px solid #bbbbbb;
+    border-bottom: 5px solid #bbbbbb;
+}
