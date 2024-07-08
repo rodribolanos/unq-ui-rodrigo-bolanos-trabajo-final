@@ -19,7 +19,7 @@ const Difficulty = ()  => {
                 setError("Something has happened, try again")
             })
             .finally( () => {
-                 setTimeout( () => setLoading(false), 2500)
+                 setTimeout( () => setLoading(false), 2000)
                 }
             )
     }, []);
@@ -30,6 +30,17 @@ const Difficulty = ()  => {
 
     const goPlay = (difficulty) => () => {
         navigate('/play?difficulty='+difficulty)
+    }
+    if (error) {
+       return (
+           <div>
+               <h1>Difficulty</h1>
+               <p className={'error'}>{error}</p>
+               <button onClick={goHome}>
+                   Welcome back
+               </button>
+           </div>
+       )
     }
     return (
         <div>

@@ -26,7 +26,7 @@ const Questions = () => {
                 setError("Something has happened, try again")
             })
             .finally(() => {
-                setLoading(false)
+                setTimeout( () => setLoading(false), 2000)
             })
     }, [difficulty])
 
