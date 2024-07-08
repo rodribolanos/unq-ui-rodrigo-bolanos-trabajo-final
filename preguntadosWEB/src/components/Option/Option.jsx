@@ -1,6 +1,7 @@
 import './Option.css';
 import {postAnswer} from "../../service/api.js";
 import {useState} from "react";
+import {correctSound, incorrectSound} from "../../utils/utils.js";
 
 const Option = ({questionID, optionKey, text, setResult, setIndex, playable, setPlayable}) => {
     const [status, setStatus] = useState('unselected')
@@ -11,13 +12,18 @@ const Option = ({questionID, optionKey, text, setResult, setIndex, playable, set
 
         const body = {
             questionId: questionID,
-            option: optionKey // Suponiendo que optionKey es un número y quieres convertirlo en 'optionX'
+            option: optionKey
         };
         setPlayable(false);
         postAnswer(body)
             .then(response => {
                 const result = response.data.answer;
                 setStatus(result ? 'correct' : 'incorrect');
+                if (result) {
+                    correctSound.play();
+                } else {
+                    incorrectSound.play();
+                }
                 setTimeout(() => {
                     setResult(prevResult => prevResult + (result ? 1 : 0));
                     setIndex(prevIndex => prevIndex + 1);
