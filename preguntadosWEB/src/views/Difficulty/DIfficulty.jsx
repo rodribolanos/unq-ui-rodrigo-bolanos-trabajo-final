@@ -1,8 +1,8 @@
 import '../../utils/globals.css'
 import {useEffect, useState} from "react";
-import {getDifficulty} from "../../service/api.js";
 import {useNavigate} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
+import {getDifficulty} from "../../service/api.js";
 
 const Difficulty = ()  => {
     const [difficulties, setDifficulties] = useState([]);
@@ -45,7 +45,7 @@ const Difficulty = ()  => {
     return (
         <div>
             <h1>Difficulty</h1>
-            <p>Choose the difficulty</p>
+            <span>Choose the difficulty</span>
             {loading ?
                 <LoaderBalls/>
                 :

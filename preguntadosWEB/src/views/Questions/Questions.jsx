@@ -1,6 +1,6 @@
 import '../../utils/globals.css'
 import {useEffect, useState} from "react";
-import {Link, useSearchParams} from "react-router-dom";
+import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
 import Option from "../../components/Option/Option.jsx";
 import {getQuestions} from "../../service/api.js";
@@ -16,6 +16,7 @@ const Questions = () => {
 
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         getQuestions(difficulty)
@@ -28,10 +29,16 @@ const Questions = () => {
             .finally(() => {
                 setTimeout( () => setLoading(false), 2000)
             })
-    }, [difficulty])
+    }, [])
 
     if (error) {
-        return <div>{error}</div>;
+        return (
+            <>
+                <div className={'error'}>{error}</div>
+                <button onClick={() => navigate('/play?difficulty='+difficulty)}> Start again! </button>
+                <button onClick={() => navigate('/')}> Go back to home </button>
+            </>
+        )
     }
 
     if (loading) {
