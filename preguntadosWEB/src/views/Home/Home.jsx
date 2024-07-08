@@ -13,7 +13,6 @@ const Home = () => {
             <p>Welcome to Preguntados</p>
             <div className='button-container'>
                 <button className='button' onClick={goDifficulties}>Start</button>
-                <button className='button'>How to play</button>
             </div>
         </div>
     );

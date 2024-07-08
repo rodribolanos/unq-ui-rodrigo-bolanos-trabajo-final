@@ -12,19 +12,23 @@ const Difficulty = ()  => {
     useEffect(() => {
         getDifficulty()
             .then((response) => {
-                setDifficulties(response.data);
+                setDifficulties(response.data)
             })
             .catch(() => {
                 setError("Something has happened, try again")
             })
             .finally( () => {
-                // setLoading(false)
+                 setLoading(false)
                 }
             )
     }, []);
 
     const goHome = () => {
         navigate('/');
+    }
+
+    const goPlay = (difficulty) => () => {
+        navigate('/play?difficulty='+difficulty)
     }
     return (
         <div>
@@ -35,7 +39,7 @@ const Difficulty = ()  => {
                 :
                 <div className='button-container'>
                 {difficulties.map((difficulty) => (
-                    <button className='button'>{difficulty}</button>
+                    <button key={difficulty} className='button' onClick={goPlay(difficulty)}>{difficulty}</button>
                 ))}
                 </div>
             }

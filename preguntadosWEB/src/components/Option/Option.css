@@ -1,0 +1,36 @@
+button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px 125px;
+    margin: 10px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    border: 1.5px solid #bbbbbb;
+    border-bottom: 5px solid #bbbbbb;
+    color: #6d6d6d;
+    font-weight: 400;
+    min-width: 500px;
+    max-height: 50px;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover{
+    background-color: #bbbbbb;
+    cursor: pointer;
+    color: #fefefe
+}
+
+.optioncorrect{
+    background-color: #25ca68;
+    border: 1.5px solid #1a8f48;
+    border-bottom: 5px solid #1a8f48;
+}
+
+.optionincorrect{
+    background-color: #f22a35;
+    border: 1.5px solid #9f1c23;
+    border-bottom: 5px solid #9f1c23;
+}
+
+.optionunselected {
+
+}
