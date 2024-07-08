@@ -1,8 +1,8 @@
-import {Link, useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {getQuestions, postAnswer} from "../../service/api.js";
+import {Link, useSearchParams} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
 import Option from "../../components/Option/Option.jsx";
+import {getQuestions} from "../../service/api.js";
 
 const Questions = () => {
     const [params] = useSearchParams();
@@ -27,7 +27,7 @@ const Questions = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [difficulty])
 
     if (error) {
         return <div>{error}</div>;

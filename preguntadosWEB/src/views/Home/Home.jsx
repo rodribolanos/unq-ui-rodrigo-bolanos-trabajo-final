@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <h1>Home</h1>
-            <p>Welcome to Preguntados</p>
+            <p>Welcome to PREGUNTADOS</p>
             <div className='button-container'>
                 <button className='button' onClick={goDifficulties}>Start</button>
             </div>
