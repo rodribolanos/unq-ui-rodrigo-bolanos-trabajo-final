@@ -22,6 +22,7 @@
     font-size: 20px;
     font-weight: bold;
     animation: pulse 1s infinite;
+    margin-bottom: 10px;
 }
 
 @keyframes pulse {
