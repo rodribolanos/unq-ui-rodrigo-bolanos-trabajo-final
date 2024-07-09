@@ -54,7 +54,7 @@ const Questions = () => {
     return (
         index <= questions.length - 1 ?
             <>
-                <Timer initialTime={10} onTimeUp={handleTimeUp} resetKey={index}  playable={playable} setPlayable={setPlayable}/>
+                <Timer initialTime={15} onTimeUp={handleTimeUp} resetKey={index}  playable={playable} setPlayable={setPlayable}/>
                 <div className="questionContainer">
                     <h1>{questions[index].question}</h1>
                 </div>
