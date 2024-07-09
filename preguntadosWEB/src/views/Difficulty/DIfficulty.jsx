@@ -44,16 +44,16 @@ const Difficulty = ()  => {
     }
     return (
         <div>
-            <h1>Difficulty</h1>
-            <span>Choose the difficulty</span>
-            {loading ?
-                <LoaderBalls/>
-                :
-                <div className='button-container'>
-                {difficulties.map((difficulty) => (
-                    <button key={difficulty} className='button' onClick={goPlay(difficulty)}>{difficulty}</button>
-                ))}
-                </div>
+            {loading ? <LoaderBalls/> :
+                (<>
+                    <h1>Difficulty</h1>
+                    <span>Choose the difficulty</span>
+                    <div className='button-container'>
+                        {difficulties.map((difficulty) => (
+                        <button key={difficulty} className='button' onClick={goPlay(difficulty)}>{difficulty}</button>
+                    ))}
+                    </div>
+                </>)
             }
             <button onClick={goHome}>
                 Welcome back
