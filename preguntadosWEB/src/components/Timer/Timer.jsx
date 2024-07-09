@@ -2,7 +2,7 @@ import './Timer.css';
 import {useEffect, useState} from "react";
 import {incorrectSound} from "../../utils/utils.js";
 
-const Timer = ({initialTime, onTimeUp, resetKey, playable}) => {
+const Timer = ({initialTime, onTimeUp, resetKey, playable, setPlayable}) => {
     const [timeLeft, setTimeLeft] = useState(initialTime);
     const [visibleError, setVisibleError] = useState(false);
 
@@ -20,6 +20,7 @@ const Timer = ({initialTime, onTimeUp, resetKey, playable}) => {
             } else if (playable) {
                 setVisibleError(true);
                 incorrectSound.play();
+                setPlayable(false);
                 setTimeout(() => {
                     setVisibleError(false)
                     onTimeUp() } , 2000);
