@@ -11,11 +11,10 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Home</h1>
-            <span>Welcome to </span>
+            <h1>Welcome to: </h1>
             <span>
                 {randomColors.map((color, index) => (
-                    <span key={index} style={{color}}>{'PREGUNTADOS'[index]}</span>
+                    <span key={index} style={{color, fontSize: 35}}>{'PREGUNTADOS'[index]}</span>
                 ))}
             </span>
             <div className='button-container'>

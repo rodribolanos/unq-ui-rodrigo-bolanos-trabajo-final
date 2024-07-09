@@ -6,11 +6,12 @@ button{
     border-radius: 10px;
     border: 1.5px solid #bbbbbb;
     border-bottom: 5px solid #bbbbbb;
-    color: #6d6d6d;
     font-weight: 400;
     min-width: 400px;
     max-height: 50px;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    font-size : 20px;
+    color: #000000;
 }
 
 button:hover{
