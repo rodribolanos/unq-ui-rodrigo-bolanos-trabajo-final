@@ -15,8 +15,8 @@ button{
 }
 
 button:hover{
-    background-color: #bbbbbb;
     cursor: pointer;
+    background-color: #bbbbbb;
     color: #fefefe
 }
 
@@ -32,8 +32,12 @@ button:hover{
     border-bottom: 5px solid #9f1c23;
 }
 
-.optionunselected {
+.optioncorrect:hover{
+    background-color: #25ca68;
+}
 
+.optionincorrect:hover {
+    background-color: #f22a35;
 }
 
 /*Escritorio*/
