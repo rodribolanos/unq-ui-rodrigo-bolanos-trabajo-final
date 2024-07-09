@@ -8,7 +8,9 @@ button{
     border-bottom: 5px solid #bbbbbb;
     font-weight: 400;
     min-width: 400px;
-    max-height: 50px;
+    max-width: 650px;
+    max-height: 70px;
+    min-height: 60px;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
     font-size : 20px;
     color: #000000;
