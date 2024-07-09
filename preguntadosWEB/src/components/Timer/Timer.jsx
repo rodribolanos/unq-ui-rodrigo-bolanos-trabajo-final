@@ -2,7 +2,7 @@ import './Timer.css';
 import {useEffect, useState} from "react";
 import {incorrectSound} from "../../utils/utils.js";
 
-const Timer = ({initialTime, onTimeUp, resetKey}) => {
+const Timer = ({initialTime, onTimeUp, resetKey, playable}) => {
     const [timeLeft, setTimeLeft] = useState(initialTime);
     const [visibleError, setVisibleError] = useState(false);
 
@@ -17,7 +17,7 @@ const Timer = ({initialTime, onTimeUp, resetKey}) => {
         const timer = setTimeout(() => {
             if (timeLeft > 0) {
                 setTimeLeft(timeLeft - 1);
-            } else {
+            } else if (playable) {
                 setVisibleError(true);
                 incorrectSound.play();
                 setTimeout(() => {
@@ -30,12 +30,14 @@ const Timer = ({initialTime, onTimeUp, resetKey}) => {
     }, [timeLeft, onTimeUp]);
 
     return (
+        <>
+        {visibleError && (
+            <div className="red-cross"></div>
+        )}
         <div className="timer">
             <span>Time left: {timeLeft}s</span>
-            {visibleError && (
-                <div className="red-cross"></div>
-            )}
         </div>
+        </>
     );
 }
 

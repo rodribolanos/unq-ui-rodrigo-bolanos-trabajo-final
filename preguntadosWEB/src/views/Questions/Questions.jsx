@@ -53,7 +53,7 @@ const Questions = () => {
     return (
         index <= questions.length - 1 ?
             <>
-                <Timer initialTime={20} onTimeUp={handleTimeUp} resetKey={index} />
+                <Timer initialTime={10} onTimeUp={handleTimeUp} resetKey={index}  playable={playable}/>
                 <div className="questionContainer">
                     <h1>{questions[index].question}</h1>
                 </div>
