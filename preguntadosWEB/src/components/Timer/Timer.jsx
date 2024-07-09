@@ -31,9 +31,11 @@ const Timer = ({initialTime, onTimeUp, resetKey, playable}) => {
 
     return (
         <>
-        {visibleError && (
-            <div className="red-cross"></div>
-        )}
+            <div className="cross-container">
+                {visibleError && (
+                <div className="timeout-text">TIMEOUT! </div>
+                )}
+            </div>
         <div className="timer">
             <span>Time left: {timeLeft}s</span>
         </div>
