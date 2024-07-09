@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
 import Option from "../../components/Option/Option.jsx";
+import Timer from "../../components/Timer/Timer.jsx";
 import {getQuestions} from "../../service/api.js";
 
 const Questions = () => {
@@ -31,6 +32,11 @@ const Questions = () => {
             })
     }, [])
 
+
+    const handleTimeUp = () => {
+        setIndex(prevIndex => prevIndex + 1);
+    };
+
     if (error) {
         return (
             <>
@@ -47,9 +53,7 @@ const Questions = () => {
     return (
         index <= questions.length - 1 ?
             <>
-            <div className="resultContainer">
-                    <h2>Result: {result}</h2>
-                </div>
+                <Timer initialTime={20} onTimeUp={handleTimeUp} resetKey={index} />
                 <div className="questionContainer">
                     <h1>{questions[index].question}</h1>
                 </div>
@@ -68,6 +72,9 @@ const Questions = () => {
                                 setPlayable={setPlayable}
                             />
                         ))}
+                </div>
+                <div className="resultContainer">
+                    <h2>Result: {result}</h2>
                 </div>
             </>
             :
