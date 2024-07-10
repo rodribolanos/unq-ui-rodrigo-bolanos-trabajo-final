@@ -4,6 +4,7 @@ import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import LoaderBalls from "../../components/LoaderBalls/LoaderBalls.jsx";
 import Option from "../../components/Option/Option.jsx";
 import Timer from "../../components/Timer/Timer.jsx";
+import NetworkError from "../../components/NetworkError/NetworkError.jsx";
 import {getQuestions} from "../../service/api.js";
 
 const Questions = () => {
@@ -16,6 +17,7 @@ const Questions = () => {
     const [playable, setPlayable] = useState(true)
 
     const [loading, setLoading] = useState(true)
+    const [networkError, setNetworkError] = useState(false)
     const [error, setError] = useState('')
     const navigate = useNavigate()
 
@@ -71,12 +73,14 @@ const Questions = () => {
                                 setIndex={setIndex}
                                 playable={playable}
                                 setPlayable={setPlayable}
+                                setNetworkError={setNetworkError}
                             />
                         ))}
                 </div>
                 <div className="resultContainer">
                     <h2>Result: {result}</h2>
                 </div>
+                {networkError && <NetworkError />}
             </>
             :
             <div className="finish">

@@ -36,8 +36,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    min-width: 400px;
-    max-width: 1400px;
+    width: 100%;
     background-color: #fefefe;
     color: black;
     border-radius: 10px;

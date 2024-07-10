@@ -3,7 +3,7 @@ import {postAnswer} from "../../service/api.js";
 import {useState} from "react";
 import {correctSound, incorrectSound} from "../../utils/utils.js";
 
-const Option = ({questionID, optionKey, text, setResult, setIndex, playable, setPlayable}) => {
+const Option = ({questionID, optionKey, text, setResult, setIndex, playable, setPlayable, setNetworkError}) => {
     const [status, setStatus] = useState('unselected')
 
 
@@ -32,8 +32,11 @@ const Option = ({questionID, optionKey, text, setResult, setIndex, playable, set
                 }, 2000);
             })
             .catch(() => {
-                setStatus('incorrect');
+                setNetworkError(true);
                 setPlayable(true);
+                setTimeout(() => {
+                    setNetworkError(false);
+                }, 2000)
             });
 
     };

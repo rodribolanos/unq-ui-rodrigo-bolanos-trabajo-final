@@ -7,10 +7,8 @@ button{
     border: 1.5px solid #bbbbbb;
     border-bottom: 5px solid #bbbbbb;
     font-weight: 400;
-    min-width: 400px;
-    max-width: 650px;
-    max-height: 70px;
-    min-height: 60px;
+    width: 100%;
+    height : 100%;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
     font-size : 20px;
     color: #000000;
@@ -45,8 +43,9 @@ button:hover{
 /*Escritorio*/
 @media (min-width: 1199.98px)  {
     button{
-        min-width: 599px;
-        max-height: 70px;
+        margin: 10px 20px;
+        width: 600px;
+        height: 60px
     }
 }
 /*Fin Escritorio*/
