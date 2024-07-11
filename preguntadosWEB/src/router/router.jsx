@@ -8,6 +8,7 @@ const RouterApp = () => (
         <Route path ="/" element={<Home />}/>
         <Route path={"/difficulty"} element= {<Difficulty/>}/>
         <Route path={"/play"} element={<Questions/>} />
+        <Route path={"*"}  element={<Home/>}/>
     </Routes>
 );
 

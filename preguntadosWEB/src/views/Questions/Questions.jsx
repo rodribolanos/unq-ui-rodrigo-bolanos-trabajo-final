@@ -30,9 +30,9 @@ const Questions = () => {
                 setError("Something has happened, try again")
             })
             .finally(() => {
-                setTimeout( () => setLoading(false), 2000)
+                setTimeout( () => setLoading(false), 1000)
             })
-    }, [])
+    }, [difficulty])
 
 
     const handleTimeUp = () => {
